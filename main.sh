@@ -7,7 +7,7 @@ if [ ! -e /dev/net/tun ]; then
         exit 1
 fi
 
-zerotier-one & export APP_PID=$!
+zerotier-one -p9994 & export APP_PID=$!
 sleep 5
 
 for ID in $(echo $NETWORK_ID | tr "," "\n")
